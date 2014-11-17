@@ -1,9 +1,11 @@
 /* jshint camelcase:false */
 var gulp = require('gulp');
 var pkg = require('./package.json');
+var wiredep = require('wiredep').stream;
 var plug = require('gulp-load-plugins')();
 var env = plug.util.env;
 var log = plug.util.log;
+var inject = require('gulp-inject');
 
 gulp.task('help', plug.taskListing);
 
@@ -13,7 +15,7 @@ gulp.task('help', plug.taskListing);
 gulp.task('jshint', function () {
     log('Linting the JavaScript');
 
-    var sources = [].concat(pkg.paths.js, pkg.paths.nodejs);
+    var sources = [].concat(pkg.paths.js);
     return gulp
         .src(sources)
         .pipe(plug.jshint('./.jshintrc'))
@@ -37,41 +39,27 @@ gulp.task('spy', function () {
     }
 });
 
-/**
- * serve the dev environment
- */
-gulp.task('serve-dev', function () {
-    serve({env: 'dev'});
-    startLivereload('development');
+gulp.task('wiredep', function () {
+  gulp.src('./index.html')
+    .pipe(wiredep({
+      directory: './bower_components',
+      ignorePath: './bower_components/'
+    }))
+    .pipe(gulp.dest('.'));
+
+  gulp.src('./index.html')
+    .pipe(wiredep({
+      directory: './bower_components',
+      ignorePath: './'
+    }))
+    .pipe(gulp.dest('.'));
 });
 
-function startLivereload(env) {
-    var path = [pkg.paths.client + '/**'];
-    var options = {auto: true};
-    plug.livereload.listen(options);
-    gulp
-        .watch(path)
-        .on('change', function (file) {
-            plug.livereload.changed(file.path);
-        });
-    log('Serving from ' + env);
-}
+gulp.task('index', function () {
+  var target = gulp.src('./index.html');
+  // It's not necessary to read the files (will speed up things), we're only after their paths:
+  var sources = gulp.src(['./app/**/*.js', './content/**/*.css'], {read: false});
 
-function serve(args) {
-    var options = {
-        script: pkg.paths.server + 'app.js',
-        delayTime: 1,
-        ext: 'html js',
-        env: {'NODE_ENV': args.env},
-        watch: ['gulpfile.js',
-                'package.json',
-                pkg.paths.server,
-                pkg.paths.client]
-    };
-
-    return plug.nodemon(options)
-        //.on('change', tasks)
-        .on('restart', function () {
-            log('restarted!');
-        });
-}
+  return target.pipe(inject(sources))
+    .pipe(gulp.dest('./'));
+});
