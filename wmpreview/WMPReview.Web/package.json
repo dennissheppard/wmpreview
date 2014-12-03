@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "glob": "^4.0.4",
-    "gulp-jshint": "^1.7.1",
+    "gulp-jshint": "^1.9.0",
     "jshint-stylish": "^0.1.5",
     "gulp-load-plugins": "^0.5.3",
     "gulp-load-utils": "0.0.4",
@@ -37,7 +37,9 @@
     "debug": "^0.8.1",
     "method-override": "^1.0.2",
     "grunt-bower-install": "^1.6.0",
-    "gulp-inject": "^1.0.2"
+    "gulp-inject": "^1.0.2",
+    "gulp-webserver": "^0.8.7",
+    "gulp-angular-filesort": "^1.0.4"
   },
   "paths": {
     "js": [
