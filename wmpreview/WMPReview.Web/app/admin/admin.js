@@ -1,23 +1,23 @@
 ﻿(function () {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('app.admin')
-        .controller('Admin', Admin);
+  angular
+    .module('foodApp.admin')
+    .controller('Admin', Admin);
 
-    Admin.$inject = ['logger'];
+  Admin.$inject = ['logger'];
 
-    /* @ngInject */
-    function Admin(logger) {
-        /*jshint validthis: true */
-        var vm = this;
+  /* @ngInject */
+  function Admin(logger) {
+    /*jshint validthis: true */
+    var vm = this;
 
-        vm.title = 'Admin';
+    vm.title = 'Admin';
 
-        activate();
+    activate();
 
-        function activate() {
-            logger.info('Activated Admin View');
-        }
+    function activate() {
+      logger.info('Activated Admin View');
     }
+  }
 })();

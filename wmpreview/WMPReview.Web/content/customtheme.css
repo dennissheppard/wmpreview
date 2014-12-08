@@ -522,7 +522,9 @@ form {
 /* Navbar */
 
 .navbar {
-    background: #000;
+  background: #fff;
+  opacity: 0.0;
+  
 }
 
     .navbar .container {

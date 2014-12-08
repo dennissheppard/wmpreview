@@ -1,33 +1,22 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('app.layout')
-        .controller('Shell', Shell);
+  angular
+    .module('foodApp.layout')
+    .controller('Shell', Shell);
 
-    Shell.$inject = ['$timeout', 'config', 'logger'];
+  Shell.$inject = ['config', 'logger'];
 
-    function Shell($timeout, config, logger) {
-        /*jshint validthis: true */
-        var vm = this;
+  function Shell(config, logger) {
+    /*jshint validthis: true */
+    var vm = this;
 
-        vm.title = config.appTitle;
-        vm.busyMessage = 'Please wait ...';
-        vm.isBusy = true;
-        vm.showSplash = true;
+    vm.title = config.appTitle;
 
-        activate();
+    activate();
 
-        function activate() {
-            logger.success(config.appTitle + ' loaded!', null);
-            hideSplash();
-        }
-
-        function hideSplash() {
-            //TODO: Force a 1 second delay so we can see the splash.
-            $timeout(function () {
-                vm.showSplash = false;
-            }, 1000);
-        }
+    function activate() {
+      logger.success(config.appTitle + ' loaded!', null);
     }
+  }
 })();

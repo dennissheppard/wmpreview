@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="app">
+<html data-ng-app="foodApp">
 <head>
     <style>
         /* This helps the ng-show/ng-hide animations start at the right place. */
@@ -8,11 +8,11 @@
             display: none!important;
         }
     </style>
-    <title data-ng-bind="title">Hot Towel Angular</title>
+    <title data-ng-bind="title">WMP Review</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-
+  <base href="/wmpreview.web/app">
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -27,16 +27,6 @@
 <body>
     <div>
         <div data-ng-include="'app/layout/shell.html'"></div>
-        <div id="splash-page" data-ng-show="false">
-            <div class="page-splash">
-                <div class="page-splash-message">
-                    Hot Towel Angular
-                </div>
-                <div class="progress progress-striped active page-progress-bar">
-                    <div class="bar"></div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <span data-cc-scroll-to-top></span>
@@ -59,17 +49,16 @@
     <script src="app/blocks/exception/exception.module.js"></script>
     <script src="app/blocks/exception/exception.js"></script>
     <script src="app/blocks/exception/exception-handler.js"></script>
-    <script src="app/admin/admin.module.js"></script>
-    <script src="app/admin/config.route.js"></script>
-    <script src="app/admin/admin.js"></script>
     <script src="app/widgets/widgets.module.js"></script>
     <script src="app/widgets/ccWidgetMinimize.js"></script>
     <script src="app/widgets/ccWidgetHeader.js"></script>
     <script src="app/widgets/ccWidgetClose.js"></script>
     <script src="app/widgets/ccSpinner.js"></script>
     <script src="app/widgets/ccSidebar.js"></script>
+    <script src="app/login/login.module.js"></script>
+    <script src="app/login/login.js"></script>
+    <script src="app/login/config.route.js"></script>
     <script src="app/layout/layout.module.js"></script>
-    <script src="app/layout/sidebar.js"></script>
     <script src="app/layout/shell.js"></script>
     <script src="app/dashboard/dashboard.module.js"></script>
     <script src="app/dashboard/dashboard.js"></script>
@@ -78,6 +67,9 @@
     <script src="app/core/dataservice.js"></script>
     <script src="app/core/constants.js"></script>
     <script src="app/core/config.js"></script>
+    <script src="app/admin/admin.module.js"></script>
+    <script src="app/admin/config.route.js"></script>
+    <script src="app/admin/admin.js"></script>
     <script src="app/app.module.js"></script>
     <!-- endinject -->
 </body>
