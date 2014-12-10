@@ -24,7 +24,9 @@
     'foodApp.dashboard',
     'foodApp.layout',
     //'foodApp.search',
-    'foodApp.login'
+    'foodApp.login',
+    'services.account',
+    'models.account'
   ]);
 
 })();
