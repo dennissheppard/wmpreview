@@ -18,8 +18,8 @@ input, select {
 }
 
 input, select {
-    padding: 4px !important;
-    /*width: 65% !important;*/
+    /*padding: 4px !important;
+    width: 65% !important;*/
     display: inline-block !important;
 }
 
@@ -55,9 +55,14 @@ input[type="radio"], input[type="checkbox"] {
 
 .btn {
     background-image: none !important;
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-    font-size: 13px !important;
+    //font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 2em;
 }
+
+.btn:hover {
+    color: #CCC;
+}
+
 .btn.btn-form-md {
     margin: 0 .5em .2em .5em;
     width: 9em;
@@ -157,7 +162,7 @@ hr {
 }
 
 a.btn {
-    font-size: 13px !important;
+    font-size: 20px !important;
 }
 
 .label {
@@ -522,11 +527,12 @@ form {
 /* Navbar */
 
 .navbar {
-  background: #fff;
-  opacity: 0.0;
-  
+    background: #FFF;
 }
 
+.navbar-inverse{ 
+    border-width: 0 0 0 0 ;
+}
     .navbar .container {
         width: 97% !important;
     }
@@ -789,7 +795,7 @@ form {
     margin-left: 230px;
     margin-right: 0;
     width: auto;
-    background: #fff;
+    background: #E5E5E5;
     min-height: 900px;
 }
 
@@ -834,9 +840,11 @@ form {
 
 /* Matter */
 
+
+
 .mainbar .matter {
     border-top: 0px solid #ddd;
-    margin: 2em;
+    margin: 0px 1em;
 }
 
 /* Widget */
@@ -1080,13 +1088,13 @@ form {
         }
 
     .content {
-        margin-left: -20px;
-        margin-right: -20px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
     .mainbar .matter {
-        padding-left: 20px;
-        padding-right: 20px;
+        /*padding-left: 20px;
+        padding-right: 20px;*/
     }
 
     .form-inline button {
@@ -1276,5 +1284,31 @@ form {
 
 /* Users ends */
 
+
+/*My custom additions*/
+#popular-list-home{
+    margin: 0 10px;
+}
+
+#popular-list-home a{
+    padding: 5px 10px;
+}
+
+#popular-title-home{
+    font-size:1.2em;
+    font-style:italic;
+    margin: 5px 0 10px;
+}
+        
+
+#topnav-toggle{
+    border: 0px; 
+    margin: 10px 0 0 8px;
+    color: #01396E;
+}
+
+#topnav-toggle:hover{
+    background: #E5E5E5;
+}
 
 /*#endregion */
