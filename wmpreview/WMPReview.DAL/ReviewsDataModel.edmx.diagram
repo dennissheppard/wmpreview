@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="baf0aee8fc2148408d01c61cdf072ac8" Name="Diagram1">
+        <EntityTypeShape EntityType="WMPFoodAppModel.Business" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMPFoodAppModel.Review" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMPFoodAppModel.Tag" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMPFoodAppModel.User" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="WMPFoodAppModel.FK_Review_ToBusiness" ManuallyRouted="false" />
+        <AssociationConnector Association="WMPFoodAppModel.FK_Review_ToUser" ManuallyRouted="false" />
+        <AssociationConnector Association="WMPFoodAppModel.BusinessToTag" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
