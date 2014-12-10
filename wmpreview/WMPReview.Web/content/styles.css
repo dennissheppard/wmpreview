@@ -6,10 +6,11 @@
 
 body {
     background-color: #FFF;
+    overflow-y: hidden;
 }
 
 .navbar-inverse {
-    background-color: #333;
+    background-color: #FFF;
 }
 
 .sidebar-widget form {
@@ -27,6 +28,7 @@ body {
     .sidebar .navi li ul li a:hover {
         color: #52b9e9;
     }
+
 
     .sidebar .navi li ul li a:disabled {
         color: #999;
@@ -170,9 +172,9 @@ small {
     margin: 2px auto 8px auto !important;
 }
 
-.fa-search {
+/*.fa-search {
     color: #FFFFFF;
-}
+}*/
 
 .form-search {
     min-height: 2em;
@@ -204,18 +206,53 @@ small {
 }
 
 .navbar .navbar-brand {
-    background: url(images/icon.png) no-repeat left top !important;
-    margin: 0 1em;
+    //background: url(../content/images/icon.png) no-repeat left top !important;
+    width:80%;
+    text-align: center;
 }
 
 .navbar .brand-title {
-    margin-left: 2em;
-    color: #FFFFFF;
+    width: 100%;
+   
+    color: #01396E;
+}
+
+.navbar-header{
+    width: 100%;
+}
+
+.navbar-btn{
+    color:#01396D;
+    position: absolute;
 }
 
 .navbar-logo img {
     height: 20px;
 }
+
+.searchbar {
+    margin: 6px 0 0 -1px;
+    width: 101%;
+    overflow: hidden;
+    position: relative;
+}
+
+.searchbar .searchbutton{
+    float:right;
+    width: 10%;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    height: 100%;
+    font-size:1.7em;
+}
+
+.searchbar #search{ 
+    padding: 5px 45px 5px 10px;
+    width: 100%;
+}
+
+
 
 .today-datas li {
     padding: 20px 14px;
@@ -521,8 +558,8 @@ a {
         }
 
     .btn {
-        margin: .2em;
-        width: 7em;
+        margin: 7px 4px;
+        width: 1em;
     }
 
     .btn-group > .btn {
@@ -536,7 +573,7 @@ a {
 
     input,
     select {
-        width: 85% !important;
+        width: 85%;
     }
 
     textarea {
