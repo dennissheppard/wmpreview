@@ -1,5 +1,5 @@
 (function(){
-  angular.module('models.account', [])
+  angular.module('foodApp.userAccount')
     .factory('AccountModel', Model);
 
   function Model(){

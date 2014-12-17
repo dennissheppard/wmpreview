@@ -1,9 +1,9 @@
 (function(){
-  angular.module('services.account', [/*'models.account'*/])
+  angular.module('foodApp.userAccount')
     .factory('AccountService', Account);
 
-  Account.$inject = ['$q', 'AccountModel'];
-  function Account($q, AccountModel){
+  Account.$inject = ['$http', 'AccountModel', 'foodApi'];
+  function Account($http, AccountModel, foodApi){
     var AccountService = {
       Login: login
     };
@@ -12,17 +12,18 @@
     /////
 
     function login(username, password){
-      var deferred = $q.defer();
-      deferred.resolve(username + password);
-      AccountModel.IsLoggedIn = true;
-      return deferred.promise;
-
-    }
-
-    function getFavoriteRest(userId){
-      //fetch rest. from api
-      AccountModel.FavRest = apiReturn;
+      var credentials = {
+        username: username,
+        password: password
+      };
+      return $http.post(foodApi, credentials).then(
+        function(data, status, headers, config){
+          AccountModel = data;
+        },
+        function(data, status, headers, config){
+          AccountModel.error = data;
+        }
+      );
     }
   }
-
 })();

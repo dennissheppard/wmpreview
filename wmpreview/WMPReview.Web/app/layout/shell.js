@@ -5,18 +5,29 @@
     .module('foodApp.layout')
     .controller('Shell', Shell);
 
-  Shell.$inject = ['config', 'logger'];
+  Shell.$inject = ['$scope'];
 
-  function Shell(config, logger) {
+  function Shell($scope) {
     /*jshint validthis: true */
-    var vm = this;
-
-    vm.title = config.appTitle;
+    var shellVM = this;
 
     activate();
+    setBindings();
+
+    ///////////
 
     function activate() {
-      logger.success(config.appTitle + ' loaded!', null);
+      //any startup code for the controller goes here
+    }
+
+    function setBindings(){
+      // listen for any child controller wanting to hide the navbar
+      $scope.$on('hideNav', hideNav);
+    }
+
+    // event bindings
+    function hideNav(){
+      shellVM.hideNav = true;
     }
   }
 })();

@@ -1,9 +1,8 @@
-<form name="loginForm" ng-submit="vm.submitLogin()">
-  <input id="username" placeholder="username" ng-required="true" ng-model="vm.username" required />
-  <input type="password" id="password" placeholder="password" ng-required="true" ng-model="vm.password" required/>
-  <input type="submit" value="Login" />
-<!--<input ng-model="vm.accountInfo.IsLoggedIn" />-->
-  {{vm.accountInfo.IsLoggedIn}}
-
-  {{vm.accountInfo.FavRest}}
-</form>
+<div>
+  <form name="loginForm" ng-submit="vm.submitLogin()">
+      <input id="username" placeholder="username" ng-required="true" ng-model="vm.username" class="row" required />
+      <input type="password" id="password" placeholder="password" ng-required="true" ng-model="vm.password" class="row" required/>
+      <input type="submit" value="Login" class="row login-btn" />
+  </form>
+  {{vm.accountInfo.isLoggedIn}}
+</div>
