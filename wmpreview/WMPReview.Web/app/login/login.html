@@ -1,8 +1,15 @@
-<div>
+<div class="container">
   <form name="loginForm" ng-submit="vm.submitLogin()">
-      <input id="username" placeholder="username" ng-required="true" ng-model="vm.username" class="row" required />
-      <input type="password" id="password" placeholder="password" ng-required="true" ng-model="vm.password" class="row" required/>
-      <input type="submit" value="Login" class="row login-btn" />
+    <div class="row">
+      <input id="username" placeholder="username" ng-required="true" ng-model="vm.username" class="col-xs-12" required />
+    </div>
+    <div class="row">
+      <input type="password" id="password" placeholder="password" ng-required="true" ng-model="vm.password" class="col-xs-12" required/>
+    </div>
+    <div class="row">
+      <input type="submit" value="Login" class="col-xs-12 login-btn" />
+    </div>
   </form>
-  {{vm.accountInfo.isLoggedIn}}
+  <input type="button" ui-sref="search" value="go to search"/>
+
 </div>

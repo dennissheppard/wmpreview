@@ -3,9 +3,9 @@
   angular.module('foodApp.login')
   .controller('Login', Login);
 
-  Login.$inject = ['$scope', 'AccountService', 'AccountModel'];
+  Login.$inject = ['$scope'];
 
-  function Login($scope, AccountService){
+  function Login($scope){
     /*jshint validthis: true */
     var vm = this;
 
