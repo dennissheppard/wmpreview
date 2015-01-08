@@ -1,7 +1,6 @@
 (function(){
 
-  angular.module('foodApp.login', [
+  angular.module('foodApp.login', []);
 
-  ]);
 
 })();

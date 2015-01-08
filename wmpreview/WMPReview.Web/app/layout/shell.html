@@ -1,9 +1,10 @@
-﻿<div data-ng-controller="Shell as vm">
-  <header class="clearfix">
-    <div data-ng-include="'app/layout/topnav.html'"></div>
+﻿<div>
+  <header class="clearfix" data-ng-hide="shellVM.hideNav">
+    <div data-ng-include="'app/layout/navbar.html'"></div>
   </header>
   <section id="content" class="content">
-    <div data-ng-view class="shuffle-animation"></div>
+    <a ui-sref="login">Go to login</a>
+    <div ui-view></div>
   </section>
 </div>
 

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('foodApp.dashboard', []
+  angular.module('foodApp.userAccount', []
 
   );
 })();
