@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Data access standard interfaces">
+    <Position X="0.5" Y="0.5" Height="0.365" Width="5.242" />
+  </Comment>
+  <Comment CommentText="Paging extension methods and specificier class">
+    <Position X="6" Y="0.5" Height="0.365" Width="4.273" />
+  </Comment>
+  <Comment CommentText="Default Interface Implementations for standard interaces (Generic)">
+    <Position X="0.542" Y="2.104" Height="0.365" Width="5.242" />
+  </Comment>
+  <Comment CommentText="Abstract base classes for standard interfaces - Use for your application">
+    <Position X="6" Y="2.125" Height="0.365" Width="4.304" />
+  </Comment>
+  <Comment CommentText="Utility classes">
+    <Position X="6" Y="5" Height="0.365" Width="4.408" />
+  </Comment>
+  <Class Name="WMP.EFDalKit.DalKitException" Collapsed="true">
+    <Position X="8.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DalKitException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WMP.EFDalKit.DataPagingExtensions" Collapsed="true">
+    <Position X="8.25" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataPagingExtenions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WMP.EFDalKit.DataPagingSpecifier" Collapsed="true">
+    <Position X="6" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIAAQAgBAAAABCAEAgAAEAAAEAAAAQEAAAIAEACAQAQ=</HashCode>
+      <FileName>DataPagingSpecifier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WMP.EFDalKit.DbContextBase" Collapsed="true">
+    <Position X="8.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAACAAAAAAAAAACAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DbContextBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WMP.EFDalKit.RepositoryBase&lt;TContext&gt;" Collapsed="true">
+    <Position X="6.25" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAgAAEAAAAQCAEAAQAAwAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RepositoryBaseOfTContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WMP.EFDalKit.RepositoryBase&lt;TContext, TEntity&gt;" Collapsed="true">
+    <Position X="6" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAACAAABAAAACAAAAGQAAAIEAEUAAAAAAACAAAAA=</HashCode>
+      <FileName>RepositoryBaseOfTContextTEntity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WMP.EFDalKit.SimpleRepository&lt;TContext, TEntity&gt;" Collapsed="true">
+    <Position X="2.75" Y="3" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WMP.EFDalKit.UnitOfWork&lt;TContext&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEECAICAgAQAAIAAACAEAAQAAAQAAAAEACgCAAAA=</HashCode>
+      <FileName>UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="WMP.EFDalKit.IRepository&lt;TEntity&gt;" Collapsed="true">
+    <Position X="2.75" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAACAAABAAAAAAAAAAAAAAIEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>IRepositoryOfTEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WMP.EFDalKit.IUnitOfWork&lt;TContext&gt;" Collapsed="true">
+    <Position X="0.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IUnitOfWork.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
