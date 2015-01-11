@@ -7,13 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using WMP.EFDalKit;
+
 namespace WMPReview.DAL
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WMPFoodAppEntities : DbContext
+    public partial class WMPFoodAppEntities : DbContextBase
     {
         public WMPFoodAppEntities()
             : base("name=WMPFoodAppEntities")
