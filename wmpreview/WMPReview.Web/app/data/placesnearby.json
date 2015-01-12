@@ -1,0 +1,12 @@
+{
+  "places" : [{
+    "name": "bk",
+    "distance": "5 miles",
+    "avgRating": "2.5"
+  },
+    {
+      "name": "chickfila",
+      "distance": "3 miles",
+      "avgRating": "3"
+    }]
+}
