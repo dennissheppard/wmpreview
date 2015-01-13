@@ -1,4 +1,4 @@
 (function () {
-  angular.module('foodApp.search', []);
+  angular.module('foodApp.search', ['foodApp.serviceManager']);
 
 })();

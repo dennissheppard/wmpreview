@@ -1,3 +1,35 @@
 <div id="search">
-  <a ui-sref="search.results">Results</a>
+
+  <div class="wmp-logo">
+    *
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <input type="text" ng-model="vm.searchKey" placeholder="Search"/>
+    </div>
+  </div>
+
+  <div class="surround">
+    <div>Popular Lunch Spots Nearby</div>
+    <div class="row" ng-repeat="place in vm.places">
+      <div class="pull-left">
+        <div class="place-name">
+          {{::place.name}}
+        </div>
+        <div class="rating">
+          {{::place.rating}}
+        </div>
+        <div class="tags">
+          {{::place.tag}}
+        </div>
+      </div>
+      <div class="pull-right">
+        <div class="distance">
+          {{::place.distance}}
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

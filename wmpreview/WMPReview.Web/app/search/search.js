@@ -3,21 +3,25 @@
     .module('foodApp.search')
     .controller('Search', Search);
 
-  Search.$inject = [];
+  Search.$inject = ['SearchManager'];
 
-  /* @ngInject */
-  function Search() {
+  function Search(SearchManager) {
     /* jshint validthis: true */
     var vm = this;
 
-    vm.activate = activate;
     vm.title = 'search';
+    vm.places = [];
 
     activate();
 
     ////////////////
 
     function activate() {
+      SearchManager.GetClosestPlaces().then(function(response){
+        vm.places = response.data.places;
+      }, function(fail){
+        Console.log("Failed to get closest places!");
+      })
     }
 
 

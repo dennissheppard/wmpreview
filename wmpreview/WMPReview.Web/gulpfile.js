@@ -46,11 +46,6 @@ function InjectDependecies(){
   var jsSources = gulp.src('./app/**/*.js').pipe(angularFilesort());
   var cssSources = gulp.src('./content/**/*.css', {read: false});
 
-//  inject(gulp.src(path.js.compile, {read:false}), {
-//    ignorePath: '/Users/walterroman/Sites/minesweeper-angular',
-//    addRootSlash: false
-//  });
-
   return target.pipe(inject(jsSources, {relative:true}))
     .pipe(inject(cssSources, {relative:true}))
     .pipe(wiredep({
