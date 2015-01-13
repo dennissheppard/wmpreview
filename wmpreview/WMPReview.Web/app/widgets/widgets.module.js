@@ -1,5 +1,6 @@
 (function () {
-  'use strict';
+  angular.module('foodApp.widgets', [
+    'foodApp.widgets.loader'
+  ]);
 
-  angular.module('foodApp.widgets', []);
 })();

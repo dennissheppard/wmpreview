@@ -1,0 +1,12 @@
+{
+  "places" : [{
+    "name": "canes",
+    "distance": "5 miles",
+    "avgRating": "2.5"
+  },
+  {
+    "name": "mcdonalds",
+    "distance": "3 miles",
+    "avgRating": "3"
+  }]
+}
