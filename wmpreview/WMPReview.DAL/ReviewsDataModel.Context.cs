@@ -7,6 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
 using WMP.EFDalKit;
 
 namespace WMPReview.DAL
@@ -31,5 +34,46 @@ namespace WMPReview.DAL
         public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
+
+        public virtual List<Business> SearchForBusinessInRadius(double lat, double lon, double distanceKm, double latMin,
+         double lonMin, double latMax, double lonMax)
+        {
+            try
+            {
+                var latParam = new SqlParameter("Lat", (float)lat);
+                var lonParam = new SqlParameter("Long", (float)lon);
+                var distanceParam = new SqlParameter("Distance", (float)distanceKm);
+                var latMinParam = new SqlParameter("LatMin", (float)latMin);
+                var lonMinParam = new SqlParameter("LongMin", (float)lonMin);
+                var latMaxParam = new SqlParameter("LatMax", (float)latMax);
+                var lonMaxParam = new SqlParameter("LongMax", (float)lonMax);
+
+                var BusinessIdResult = ((IObjectContextAdapter)this).ObjectContext.ExecuteStoreQuery<QueryResult>(
+                    "Exec[dbo].[LocationsWithInRadius] @Lat," +
+                    "@Long, " +
+                    "@Distance, " +
+                    "@LatMin, " +
+                    "@LatMax, " +
+                    "@LongMin, " +
+                    "@LongMax", latParam, lonParam, distanceParam, latMinParam, lonMinParam, latMaxParam,
+                    lonMaxParam);
+
+          
+
+            }
+
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return new List<Business>();
+        }
+    }
+
+    public class QueryResult
+    {
+        public int Id { get; set; }
+        public double Distance { get; set; }
     }
 }
