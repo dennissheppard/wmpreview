@@ -1,4 +1,4 @@
-namespace WmpReview.Api.Models.DTO
+﻿namespace WmpReview.Api.Models.DTO
 {
     public class User
     {

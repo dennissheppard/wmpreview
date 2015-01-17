@@ -1,6 +1,8 @@
-﻿using Autofac;
+﻿using System.Reflection;
+using Autofac;
 using Autofac.Integration.WebApi;
 using WmpReview.Api.Controllers;
+using Module = Autofac.Module;
 
 namespace DemoApp.DependencyResolution
 {

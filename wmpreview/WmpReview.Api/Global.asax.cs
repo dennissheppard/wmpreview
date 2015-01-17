@@ -18,7 +18,7 @@ namespace WmpReview.Api
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            
+
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ContainerConfiguration.SetupContainer();
@@ -33,9 +33,8 @@ namespace WmpReview.Api
             Mapper.CreateMap<Business, Models.DTO.User>();
             Mapper.CreateMap<Models.DTO.Business, User>();
 
-              Mapper.CreateMap<Tag, Models.DTO.Tag>();
+            Mapper.CreateMap<Tag, Models.DTO.Tag>();
             Mapper.CreateMap<Models.DTO.Tag, Tag>();
-        }
         }
     }
 }

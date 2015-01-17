@@ -1,7 +1,9 @@
-﻿using System.Web.Http;
+﻿using System.ComponentModel;
+using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using DemoApp.DependencyResolution;
+using IContainer = Autofac.IContainer;
 
 namespace WmpReview.Api
 {

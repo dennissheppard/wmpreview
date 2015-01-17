@@ -35,13 +35,6 @@ namespace WmpReview.Api.Controllers
             return businesses;
         }
 
-        public IEnumerable<Business> Get(int count)
-        {
-            var dbBusinesses = _businessRepository.GetAll(count, 0);
-            var businesses = Mapper.Map<List<Business>>(dbBusinesses);
-            return businesses;
-        }
-
         public IEnumerable<Business> Get(int count, int offset)
         {
             
@@ -64,13 +57,15 @@ namespace WmpReview.Api.Controllers
         // GET: api/Business/5
         public Business Get(int id)
         {
-            return _businessRepository.FindById(id);
+            var dbBusiness = _businessRepository.FindById(id);
+            return Mapper.Map<Business>(dbBusiness);
         }
 
         // POST: api/Business
         public void Post(Business business)
         {
-            _businessRepository.Add(business);
+            var dbBusiness = Mapper.Map<WMPReview.DAL.Business>(business);
+            _businessRepository.Add(dbBusiness);
             _unitOfWork.SaveChanges();
         }
 

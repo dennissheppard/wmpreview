@@ -22,15 +22,10 @@ namespace WMPReview.DAL
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
+     
         public Nullable<double> Lat { get; set; }
         public Nullable<double> Long { get; set; }
-        public string Address1 { get; set; }
-        public string Address2 { get; set; }
-        public string City { get; set; }
-        public string Locality { get; set; }
-        public string PostalCode { get; set; }
-        public string Country { get; set; }
+      
         public Nullable<int> YelpId { get; set; }
     
         public virtual ICollection<Review> Reviews { get; set; }

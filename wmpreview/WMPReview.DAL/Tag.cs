@@ -20,7 +20,7 @@ namespace WMPReview.DAL
         }
     
         public int Id { get; set; }
-        public Nullable<int> Name { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
     
         public virtual ICollection<Business> Businesses { get; set; }
