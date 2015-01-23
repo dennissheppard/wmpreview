@@ -31,27 +31,24 @@ namespace WmpReview.Api.Controllers
         public IEnumerable<Business> Get()
         {
             var dbBusinesses =_businessRepository.GetAll();
-            var businesses =Mapper.Map<List<Business>>(dbBusinesses);
+            var businesses = Mapper.Map<List<Business>>(dbBusinesses);
             return businesses;
         }
 
         public IEnumerable<Business> Get(int count, int offset)
         {
-            
-
             var dbBusinesses = _businessRepository.GetAll(count, offset);
             var businesses = Mapper.Map<List<Business>>(dbBusinesses);
             return businesses;
-
         }
         // GET: api/Business
         [HttpGet]
         public IEnumerable<Business> Popular(double lat, double lon, int count, int offset)
         {
-           var tag = _tagRepository.Query(x=>x.Name == "Popular");
-          //  Tag t = new Tag();
             throw new NotImplementedException();
-            //return _businessRepository.Query(x => x.Tags.Contains(tag));
+         /*  var tag = _tagRepository.Query(x=>x.Name == "Popular");
+        
+           return _businessRepository.Query(x => x.Tags.Contains(tag));*/
         } 
 
         // GET: api/Business/5

@@ -7,13 +7,13 @@ namespace WMPReview.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.2-31219")]
-    public sealed partial class initialcommit : IMigrationMetadata
+    public sealed partial class firstmigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialcommit));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(firstmigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201501170219322_initialcommit"; }
+            get { return "201501230020233_firstmigration"; }
         }
         
         string IMigrationMetadata.Source

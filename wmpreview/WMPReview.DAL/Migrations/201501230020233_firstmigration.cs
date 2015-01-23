@@ -3,7 +3,7 @@ namespace WMPReview.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initialcommit : DbMigration
+    public partial class firstmigration : DbMigration
     {
         public override void Up()
         {
@@ -13,15 +13,8 @@ namespace WMPReview.DAL.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        Description = c.String(),
                         Lat = c.Double(),
                         Long = c.Double(),
-                        Address1 = c.String(),
-                        Address2 = c.String(),
-                        City = c.String(),
-                        Locality = c.String(),
-                        PostalCode = c.String(),
-                        Country = c.String(),
                         YelpId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id);

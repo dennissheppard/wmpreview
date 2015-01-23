@@ -7,25 +7,43 @@ namespace WMPReview.DAL.Migrations
 
     internal sealed class Configuration : DbMigrationsConfiguration<WMPReview.DAL.WMPFoodAppEntities>
     {
-        public Configuration()
-        {
-            AutomaticMigrationsEnabled = false;
-        }
 
         protected override void Seed(WMPReview.DAL.WMPFoodAppEntities context)
         {
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+
+            context.Database.ExecuteSqlCommand(GetSqlString());
+            context.Database.ExecuteSqlCommand(getFunctionString());
+
+        }
+
+        private string GetSqlString()
+        {
+            return "CREATE PROCEDURE [dbo].[LocationsWithInRadius]" +
+             " @Lat float, " +
+             "@Long float," +
+             " @Distance float,  " +
+             "@LatMin float, " +
+             "@LatMax float," +
+             "@LongMin float," +
+             "@LongMax float " +
+             "AS " +
+             Environment.NewLine +
+             "Begin " +
+             "Declare @EarthRadius float; " +
+             "set @EarthRadius =6371; " +
+             "SELECT Id, distance FROM" +
+             " (SELECT * , dbo.GetDistance (@Lat, @Long, l.lat, l.long) distance FROM dbo.Businesses l WHERE(l.Lat >= @LatMin AND l.Lat <= @LatMax)" +
+             " AND (l.Long >= @LongMin AND l.Long <= @LongMax)) as filtered WHERE distance <= @Distance end ";
+        }
+
+        private string getFunctionString()
+        {
+            return
+                "CREATE FUNCTION [dbo].[GetDistance] (@Lat float,@Long float,@LatDest float,@LongDest float ) " +
+                "RETURNS float AS BEGIN  DECLARE @Distance as float, @EarthRadius float set @EarthRadius =6371;" +
+                " SELECT @Distance = acos(sin(@Lat) * sin(@LatDest) + cos(@Lat) * cos(@LatDest) * cos(@LongDest - (@Long))) * @EarthRadius " +
+                "RETURN @Distance END";
         }
     }
 }

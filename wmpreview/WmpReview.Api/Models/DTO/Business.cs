@@ -19,6 +19,7 @@ namespace WmpReview.Api.Models.DTO
         public double Lat { get; set; }
         public double Long { get; set; }
         public int YelpId { get; set; }
+        public double DistanceFromSearch { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
         public virtual ICollection<Tag> Tags { get; set; }

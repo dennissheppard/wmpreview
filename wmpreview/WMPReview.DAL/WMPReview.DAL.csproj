@@ -53,16 +53,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business.cs" />
-    <Compile Include="Migrations\201501170219322_initialcommit.cs" />
-    <Compile Include="Migrations\201501170219322_initialcommit.Designer.cs">
-      <DependentUpon>201501170219322_initialcommit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201501170240574_removefieldsfrombusiness.cs" />
-    <Compile Include="Migrations\201501170240574_removefieldsfrombusiness.Designer.cs">
-      <DependentUpon>201501170240574_removefieldsfrombusiness.cs</DependentUpon>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Migrations\201501230020233_firstmigration.cs" />
+    <Compile Include="Migrations\201501230020233_firstmigration.Designer.cs">
+      <DependentUpon>201501230020233_firstmigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GeoLocation.cs" />
     <Compile Include="Repositories\IBusinessRepository.cs" />
     <Compile Include="Repositories\IReviewRepository.cs" />
     <Compile Include="Repositories\ITagRepository.cs" />
@@ -90,11 +88,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201501170219322_initialcommit.resx">
-      <DependentUpon>201501170219322_initialcommit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201501170240574_removefieldsfrombusiness.resx">
-      <DependentUpon>201501170240574_removefieldsfrombusiness.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201501230020233_firstmigration.resx">
+      <DependentUpon>201501230020233_firstmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

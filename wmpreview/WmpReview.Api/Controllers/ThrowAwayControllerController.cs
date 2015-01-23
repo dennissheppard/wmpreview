@@ -14,7 +14,7 @@ namespace WmpReview.Api.Controllers
         public IEnumerable<string> Get()
         {
             var awesomedb = new WMPFoodAppEntities();
-            awesomedb.SearchForBusinessInRadius(0.732877678433442, -1.50913507728434, 100000, -10000, -10000, 10000, 10000);
+            var x = awesomedb.SearchForBusinessInRadius(0.732877678433442, -1.50913507728434, 100000, -10000, -10000, 10000, 10000);
 
             return new List<string>();
         }

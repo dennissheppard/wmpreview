@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
+using System.Linq;
 using WMP.EFDalKit;
 
 namespace WMPReview.DAL
@@ -24,9 +25,10 @@ namespace WMPReview.DAL
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
-        public virtual List<Business> SearchForBusinessInRadius(double lat, double lon, double distanceKm, double latMin,
+        public virtual List<QueryResult> SearchForBusinessInRadius(double lat, double lon, double distanceKm, double latMin,
             double lonMin, double latMax, double lonMax)
         {
+            
             try
             {
                 var latParam = new SqlParameter("Lat", (float)lat);
@@ -47,7 +49,10 @@ namespace WMPReview.DAL
                     "@LongMax", latParam, lonParam, distanceParam, latMinParam, lonMinParam, latMaxParam,
                     lonMaxParam);
 
-          
+
+
+                return BusinessIdResult.ToList();
+
 
             }
 
@@ -56,7 +61,7 @@ namespace WMPReview.DAL
                 throw e;
             }
 
-            return new List<Business>();
+            
         }
     }
 
