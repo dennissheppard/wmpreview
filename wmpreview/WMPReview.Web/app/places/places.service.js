@@ -2,7 +2,9 @@
   angular.module('foodApp.places')
     .factory('PlacesService', Places);
 
-  function Places(foodApi){
+  Places.$inject = ['apiConstants'];
+
+  function Places(apiConstants){
     var places = {
       Add: add
     };
@@ -20,7 +22,7 @@
         name: placeInfo.placeName
       };
 
-      return $http.post(foodApi, data).then(
+      return $http.post(apiConstants.apiUrl, data).then(
         function(response){
           //get a positive response from api
         },

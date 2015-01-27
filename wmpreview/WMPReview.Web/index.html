@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
   <!-- endbower -->
   <!-- inject:css -->
+  <link rel="stylesheet" href="content/common.css">
   <link rel="stylesheet" href="content/login.css">
   <!-- endinject -->
 
@@ -26,7 +27,7 @@
     <header class="clearfix" data-ng-hide="shellVM.hideNav">
       <div data-ng-include="'app/layout/navbar.html'"></div>
     </header>
-    <section id="content" class="content">
+    <section id="content" class="content main-content">
       <div ui-view></div>
     </section>
   </div>

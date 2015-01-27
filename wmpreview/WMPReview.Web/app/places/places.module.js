@@ -1,5 +1,8 @@
 (function(){
 
-  angular.module('foodApp.places', []);
+  angular.module('foodApp.places', [
+    'foodApp.places.details',
+    'foodApp.places.review'
+  ]);
 
 })();

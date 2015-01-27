@@ -1,7 +1,7 @@
-(function(){
-  angular
-    .module('foodApp')
-    .value('apiConstants',{
+(function () {
+  angular.module('foodApp')
+    .value('apiConstants',
+    {
       stageApi: ''
     })
 })();
