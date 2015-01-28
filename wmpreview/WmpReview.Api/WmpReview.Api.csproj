@@ -215,10 +215,10 @@
     <Compile Include="ContainerConfiguration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BusinessController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostMan.cs" />
+    <Compile Include="Controllers\PostmanController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\ThrowAwayControllerController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DalInfrastructureModule.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

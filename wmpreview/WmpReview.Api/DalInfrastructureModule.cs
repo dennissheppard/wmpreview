@@ -17,7 +17,8 @@ namespace WmpReview.Api
             builder.RegisterType<WMPFoodAppEntities>().AsSelf().InstancePerRequest();
 
             builder.RegisterType<ReviewRepository>().As<IReviewRepository>();
-            
+            builder.RegisterType<BusinessRepository>().As<IBusinessRepository>();
+            builder.RegisterType<TagRepository>().As<ITagRepository>();
             base.Load(builder);
         }
     }

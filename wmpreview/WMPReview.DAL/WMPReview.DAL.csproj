@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201501230020233_firstmigration.Designer.cs">
       <DependentUpon>201501230020233_firstmigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201501230123033_changeyelpidtostring.cs" />
+    <Compile Include="Migrations\201501230123033_changeyelpidtostring.Designer.cs">
+      <DependentUpon>201501230123033_changeyelpidtostring.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GeoLocation.cs" />
@@ -90,6 +94,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201501230020233_firstmigration.resx">
       <DependentUpon>201501230020233_firstmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501230123033_changeyelpidtostring.resx">
+      <DependentUpon>201501230123033_changeyelpidtostring.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -43,12 +43,13 @@ namespace WmpReview.Api.Controllers
         }
         // GET: api/Business
         [HttpGet]
-        public IEnumerable<Business> Popular(double lat, double lon, int count, int offset)
+        public IEnumerable<Business> Popular(double lat, double lon, double radius, int count, int offset )
         {
-            throw new NotImplementedException();
-         /*  var tag = _tagRepository.Query(x=>x.Name == "Popular");
-        
-           return _businessRepository.Query(x => x.Tags.Contains(tag));*/
+
+            var popular = _businessRepository.GetByLocation(lat, lon, radius).ToList().Skip(offset).Take(count);
+            var businesses = Mapper.Map<List<Business>>(popular);
+            return businesses;
+          
         } 
 
         // GET: api/Business/5
