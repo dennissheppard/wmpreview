@@ -16,7 +16,6 @@
 
     activate();
 
-
     ////////////////
 
     function activate() {
@@ -32,7 +31,6 @@
         $state.go('search.results');
       });
     }
-
 
   }
 })();

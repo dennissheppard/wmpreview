@@ -40,6 +40,12 @@
           templateUrl: 'app/search/results/search.results.html',
           controller: 'Results as vm'
         })
+        .state('search.filters', {
+              // url will become '/search/filters'
+              url: '/filters',
+              templateUrl: 'app/search/filters/search.filters.html',
+              controller: 'Filters as vm'
+         })
         .state('places', {
           // url will become '/places'
           abstract: true,

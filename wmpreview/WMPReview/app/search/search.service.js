@@ -10,8 +10,8 @@
     var that = this;
     return {
       getNearbyPlaces: GetNearbyPlaces,
-      getPlacesBySearchTerm: GetPlacesBySearchTerm
-
+      getPlacesBySearchTerm: GetPlacesBySearchTerm,
+      getSearchResultsFiltered: GetSearchResultsFiltered
     };
 
     ////////////////
@@ -21,13 +21,19 @@
       return ServiceManager.Get(url);
     }
 
-    function GetPlacesBySearchTerm(term){
-      var url = 'app/data/placesbysearch.json';
-      return ServiceManager.Get(url).then(function(results){
-        that.searchResults = results;
-      });
+    function GetPlacesBySearchTerm(term) {
+        var url = 'app/data/placesbysearch.json';
+        return ServiceManager.Get(url).then(function (results) {
+            that.searchResults = results;
+        });
     }
 
+    function GetSearchResultsFiltered(filter){
+        var url = 'app/data/placesbysearchfilter.json';
+        return ServiceManager.Get(url).then(function(results){
+          that.filterResults = results;
+        });
+    }
     /////private methods/////
     function geoLocationSuccess(pos){
       that.lat = pos.coords.latitude;

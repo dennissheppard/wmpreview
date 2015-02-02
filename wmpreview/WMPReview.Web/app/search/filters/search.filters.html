@@ -1,0 +1,21 @@
+<div id="filters">
+    <form name="filterForm" ng-submit="vm.submitFilter()" ng-controller="Filters">
+        Distance: <br />
+        <select>
+            <option value=".25">0.25 mile</option>
+            <option value="1">1 mile</option>
+            <option value="5">5 miles</option>
+            <option value="20">20 miles</option>
+        </select>
+        <br />
+        <input type="checkbox" ng-model="vm.greatForClients"/> Great for Clients </br>
+        <input type="checkbox" ng-model="vm.awesomeDrinks"/> Awesome Drinks </br>
+        <input type="checkbox" ng-model="vm.openLate" /> Open Late</br>
+        <input type="checkbox" ng-model="vm.greatService"/> Great Service</br>
+        <input type="checkbox" ng-model="vm.grabAndGo"/> Grab and Go </br>
+
+        <input type="submit" value="Add Filters to search" />
+
+    </form>
+
+</div>
