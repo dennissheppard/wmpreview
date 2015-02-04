@@ -1,0 +1,23 @@
+{
+  "places" : [{
+    "name": "Salseria Grill & Cantina",
+    "distance": "0.2 miles",
+    "avgRating": "2.5"
+  },
+  {
+    "name": "La Cocina",
+    "distance": "0.3 miles",
+    "avgRating": "3"
+  },
+  {
+    "name": "Mercadito",
+    "distance": "0.6 miles",
+    "avgRating": "3"
+  },
+  {
+    "name": "Frontera Grill",
+    "distance": "0.7 miles",
+    "avgRating": "3"
+  }]
+
+}
