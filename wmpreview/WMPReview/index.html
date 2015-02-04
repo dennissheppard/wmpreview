@@ -23,12 +23,12 @@
 </head>
 <body>
   <div ng-controller="Shell as shellVM">
-    <header class="clearfix" data-ng-hide="shellVM.hideNav">
+    <div class="clearfix" data-ng-hide="shellVM.hideNav">
       <div data-ng-include="'app/layout/navbar.html'"></div>
-    </header>
-    <section id="content" class="content main-content">
-      <div ui-view></div>
-    </section>
+    </div>
+    <div id="content" class="container content main-content">
+      <ui-view></ui-view>
+    </div>
   </div>
 
     <span data-cc-scroll-to-top></span>
@@ -46,13 +46,13 @@
     <script src="app/widgets/loader/loader.module.js"></script>
     <script src="app/widgets/loader/loader.service.js"></script>
     <script src="app/widgets/loader/loader.directive.js"></script>
-    <script src="app/search/results/results.module.js"></script>
-    <script src="app/search/results/results.js"></script>
     <script src="app/search/search.module.js"></script>
     <script src="app/search/filters/filters.js"></script>
     <script src="app/places/review/review.module.js"></script>
     <script src="app/places/places.module.js"></script>
     <script src="app/places/review/review.js"></script>
+    <script src="app/search/results/results.module.js"></script>
+    <script src="app/search/results/results.js"></script>
     <script src="app/places/details/details.module.js"></script>
     <script src="app/places/details/details.js"></script>
     <script src="app/widgets/widgets.module.js"></script>

@@ -1,18 +1,23 @@
-<div id="search" class="container">
+<div id="search">
 
-  <div class="row logo">*</div>
-  <div class="row">
-    <input type="text" class="col-xs-12" placeholder="Search" ng-model="vm.searchText" ng-enter="vm.search()"/>
+  <div class="text-center form-group">
+    <img src="content/images/wmp_icon.png">
   </div>
-  <div class="row">
-    <div class="col-xs-12" ng-repeat="place in vm.nearbyPlaces">
-      <div>{{place.name}}</div>
-      <div class="pull-right">{{place.distance}}</div>
-      <div>{{vm.avgRating}}</div>
+
+  <form>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search" ng-model="vm.searchText" ng-enter="vm.search()"/>
     </div>
+  </form>
+
+  <div class="list-group">
+    <a class="list-group-item" ng-repeat="place in vm.nearbyPlaces">
+      <span class="pull-right">{{place.distance}}</span>
+      <h4 class="list-group-item-heading">{{place.name}}</h4>
+      <p class="list-group-item-text">{{vm.avgRating}}</p>
+    </a>
   </div>
 
   <ui-view ng-controller="Filters"></ui-view>
-
 
 </div>
