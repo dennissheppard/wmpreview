@@ -30,9 +30,7 @@
 
     function GetSearchResultsFiltered(filter){
         var url = 'app/data/placesbysearchfilter.json';
-        return ServiceManager.Get(url).then(function(results){
-          that.filterResults = results;
-        });
+        return ServiceManager.Get(url);
     }
     /////private methods/////
     function geoLocationSuccess(pos){
