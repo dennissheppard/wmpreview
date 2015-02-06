@@ -22,11 +22,15 @@
     }
 
     function GetPlacesBySearchTerm(term) {
-        var url = 'app/data/placesbysearch.json';
+        var url = 'Business';
         return ServiceManager.Get(url).then(function (results) {
-            that.searchResults = results;
+            return results;
+        }, function(error){
+            return error;
         });
+
     }
+
 
     function GetSearchResultsFiltered(filter){
         var url = 'app/data/placesbysearchfilter.json';

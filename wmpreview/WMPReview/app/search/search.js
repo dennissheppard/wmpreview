@@ -22,14 +22,16 @@
     function activate() {
       vm.searchTerm = '';
       // send coordinates
-      SearchManager.getNearbyPlaces().then(function(response){
-        vm.nearbyPlaces = response.data.places;
-      });
+      //SearchManager.getNearbyPlaces().then(function(response){
+      //  vm.nearbyPlaces = response.data.places;
+      //});
     }
 
     function search(){
-      SearchManager.getPlacesBySearchTerm(vm.searchTerm).then(function(){
-        $state.go('search.results');
+      SearchManager.getPlacesBySearchTerm(vm.searchTerm).then(function(results){
+          vm.searchResults = results.data;
+      }, function (error){
+          vm.error = error;
       });
     }
 

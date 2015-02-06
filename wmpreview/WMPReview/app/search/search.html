@@ -6,7 +6,7 @@
 
   <form>
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search" ng-model="vm.searchText" ng-enter="vm.search()"/>
+      <input type="text" class="form-control" placeholder="Search" ng-model="vm.searchTerm" ng-enter="vm.search()"/>
     </div>
   </form>
 
@@ -24,9 +24,19 @@
       </div>
   </div>
 
+  <div ng-if="vm.searchResults">
+      <ul class="list-group">
+          <li class="list-group-item" ng-repeat="result in vm.searchResults">
+            {{::result.Name}}
+            {{::result.Tags[0].Name}}
+          </li>
+      </ul>
+  </div>
   <ng-include ng-if="vm.showFilterSection" src="'app/search/filters/search.filters.html'"></ng-include>
 
-  <ui-view ng-controller="FilterResults"></ui-view>
+  <!--<ui-view ng-controller="FilterResults"></ui-view>-->
 
-
+<div ng-if="vm.error">
+    {{:: vm.error.msg}}
+</div>
 </div>
