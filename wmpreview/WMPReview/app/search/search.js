@@ -13,6 +13,7 @@
     vm.activate = activate;
     vm.title = 'search';
     vm.search = search;
+    vm.filter = filter;
 
     activate();
 
@@ -32,5 +33,12 @@
       });
     }
 
+    function filter(){
+        if(vm.showFilterSection){
+            vm.showFilterSection = false;
+        }else{
+            vm.showFilterSection = true;
+        }
+    }
   }
 })();

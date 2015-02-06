@@ -18,6 +18,15 @@
     </a>
   </div>
 
-  <ui-view ng-controller="Filters"></ui-view>
+  <div class="row">
+      <div class="col-xs-12">
+          <button type="button" class="btn btn-default col-xs-12" ng-click="vm.filter()">Filter</button>
+      </div>
+  </div>
+
+  <ng-include ng-if="vm.showFilterSection" src="'app/search/filters/search.filters.html'"></ng-include>
+
+  <ui-view ng-controller="FilterResults"></ui-view>
+
 
 </div>
