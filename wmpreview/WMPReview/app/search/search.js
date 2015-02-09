@@ -11,7 +11,7 @@
     var vm = this;
 
     vm.activate = activate;
-    vm.title = 'search';
+    vm.title = 'Find a place';
     vm.search = search;
     vm.filter = filter;
 

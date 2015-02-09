@@ -3,32 +3,44 @@
   angular.module('foodApp.places')
   .controller('Places', Places);
 
-  Places.$inject = ['PlacesService']
+  Places.$inject = ['PlacesService', '$state']
 
-  function Places(PlacesService){
+  function Places(PlacesService, $state){
     /*jshint validthis: true */
     var vm = this;
-
+    vm.title = "Add a place";
+    vm.search = search;
+    
     activate();
-
+    vm.businesses = businesses;
     //DOM events
-    vm.addPlace = AddPlace;
+    
 
     ///////
 
+      
+      var businesses = "";
     function activate(){
-      /*
-       * any startup code goes here
-       */
+       /*
+        * any startup code goes here
+        */
+        
     }
+      
+    function search(){
+       searchToAddPlace(vm.searchTerm);
+    }
+      
 
-    function AddPlace(){
-
-      PlacesService.Add(vm).then(function(response){
-        if(response === 'success'){
-          //show toastr
-        }
-      });
+    function searchToAddPlace(term){
+        businesses = PlacesService.getYelpEntries(term);
+        $state.go('places.add.results');
+        
+//      PlacesService.Add(vm).then(function(response){
+//        if(response === 'success'){
+//          //show toastr
+//        }
+//      });
     }
 
   }

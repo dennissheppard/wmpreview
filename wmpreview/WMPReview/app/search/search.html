@@ -2,11 +2,12 @@
 
   <div class="text-center form-group">
     <img src="content/images/wmp_icon.png">
+    <h3>{{vm.title}}</h3>
   </div>
 
   <form>
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search" ng-model="vm.searchTerm" ng-enter="vm.search()"/>
+      <input type="text" class="form-control" placeholder="Search" ng-model="vm.searchTerm" ng-enter="vm.search()" ng-submit="vm.search()"/>
     </div>
   </form>
 
