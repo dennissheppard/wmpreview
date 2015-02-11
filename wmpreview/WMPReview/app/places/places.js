@@ -8,7 +8,6 @@
   function Places(PlacesService, $state){
     /*jshint validthis: true */
     var vm = this;
-    vm.title = "Add a place";
     vm.search = search;
     
     activate();

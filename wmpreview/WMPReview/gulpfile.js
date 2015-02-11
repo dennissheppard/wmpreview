@@ -26,6 +26,10 @@ gulp.task('watch', function() {
   gulp.watch('src/*.js', ['lint']);
 });
 
+gulp.task('dev', ['build', 'webserver'], function(){
+  log('Building solution and running on port 2323');
+})
+
 gulp.task('build', function () {
   InjectDependecies();
 });

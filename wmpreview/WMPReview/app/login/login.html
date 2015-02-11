@@ -1,16 +1,16 @@
 <div class="container">
   <form name="loginForm" ng-submit="vm.submitLogin()">
-    <div class="row">
-      <input id="username" placeholder="username" ng-required="true" ng-model="vm.username" class="col-xs-12" required />
+    <div class="form-group">
+      <input id="username" placeholder="Username" ng-required="true" ng-model="vm.username" class="form-control" required />
     </div>
-    <div class="row">
-      <input type="password" id="password" placeholder="password" ng-required="true" ng-model="vm.password" class="col-xs-12" required/>
+    <div class="form-group">
+      <input type="password" id="password" placeholder="Password" ng-required="true" ng-model="vm.password" class="form-control" required/>
     </div>
-    <div class="row">
-      <input type="submit" value="Login" class="col-xs-12 login-btn" />
+    <div class="form-group">
+      <input type="submit" value="Login" class="btn btn-block btn-primary" />
     </div>
   </form>
-  <input type="button" ui-sref="search" value="Search for a place"/>
-  <input type="button" ui-sref="places.add" value="Check out places"/>
+  <input type="button" class="btn btn-block btn-default" ui-sref="search" value="Search for a place"/>
+  <input type="button" class="btn btn-block btn-default" ui-sref="places.add" value="Check out places"/>
 
 </div>
