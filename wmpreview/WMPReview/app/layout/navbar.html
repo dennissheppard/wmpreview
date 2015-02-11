@@ -1,5 +1,17 @@
-﻿<nav class="navbar navbar-default" ng-controller="Navbar as vm">
-  <div class="navbar-brand">
-  	WMP Food
-  </div>
-</nav>
+﻿<div class="navbar navbar-app navbar-absolute-top" ng-controller="Navbar as vm">
+	<div class="navbar-brand navbar-brand-center" yield-to="title">
+         <span>WMP Food App</span>
+     </div>
+     <div class="btn-group pull-right" yield-to="navbarAction">
+         <div class="btn btn-navbar">
+             <!-- <i class="fa fa-plus"></i> -->
+         </div>
+     </div>	
+</div>
+
+<div class="navbar navbar-app navbar-absolute-bottom"> 
+     <div class="btn-group justified">
+         <a ui-sref="search" class="btn btn-navbar btn-icon-only"><i class="fa fa-search fa-navbar"></i></a>
+         <a ui-sref="places.add" class="btn btn-navbar btn-icon-only"><i class="fa fa-plus fa-navbar"></i></a>
+     </div> 
+ </div>

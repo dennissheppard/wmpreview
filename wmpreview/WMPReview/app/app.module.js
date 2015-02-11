@@ -6,6 +6,7 @@
      * 3rd party imports
      */
     'ui.router',
+    'mobile-angular-ui',
 
     /*
      * Shared modules

@@ -1,8 +1,8 @@
 <div id="filters" ng-controller="Filters as vm">
     <form class="form" role="form" name="filterForm" ng-submit="vm.submitFilter()">
         <div class="form-group">
-            <label>Distance</label>
             <select class= "form-control" ng-model="vm.distanceFromUser">
+                <option value="" selected disabled>Distance</option>
                 <option value=".25">0.25 mile</option>
                 <option value="1">1 mile</option>
                 <option value="5">5 miles</option>
