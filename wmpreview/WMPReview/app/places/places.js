@@ -18,7 +18,7 @@
     ///////
 
       
-      var businesses = "";
+    vm.businesses = '';
     function activate(){
        /*
         * any startup code goes here
@@ -32,14 +32,9 @@
       
 
     function searchToAddPlace(term){
-        businesses = PlacesService.getYelpEntries(term);
-        $state.go('places.add.results');
+        vm.businesses = PlacesService.getYelpEntries(term);
         
-//      PlacesService.Add(vm).then(function(response){
-//        if(response === 'success'){
-//          //show toastr
-//        }
-//      });
+
     }
 
   }
