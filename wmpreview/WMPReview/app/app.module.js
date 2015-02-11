@@ -56,14 +56,9 @@
         }).state('places.add', {
           // url will become '/places/add'
           url: '/add',
-          templateUrl: 'app/search/search.html',
-          controller: 'Places as vm'
+          templateUrl: 'app/places/add/add_results.html',
+          controller: 'Add as vm'
         })
-        .state('places.add.results', {
-          url: '/add/:term',
-          templateUrl: 'app/search/results/search.results.html',
-          controller: 'Places as vm'
-      })
         .state('places.edit', {
           // url will become '/places/12/edit'
           url: '/:placeId/edit',
