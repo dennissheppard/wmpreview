@@ -8,8 +8,11 @@
       this.places = [];
 
 
-      this.place = function(data){
-          that.places.push(data);
+      this.place = function(businesses){
+          _.each(businesses, function(business){
+              that.places.push(business);
+          })
+
       }
 
 

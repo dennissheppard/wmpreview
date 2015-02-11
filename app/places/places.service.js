@@ -54,7 +54,7 @@
         var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
         params['oauth_signature'] = signature;
         return $http.jsonp(url, {params: params}).then(function(results){
-            PlacesModel.place(results.data);
+            PlacesModel.place(results.data.businesses);
             return results.data;
         });
     

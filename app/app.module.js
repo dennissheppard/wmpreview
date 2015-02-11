@@ -49,7 +49,6 @@
         })
         .state('places', {
           // url will become '/places'
-          abstract: true,
           url: '/places',
           templateUrl: 'app/places/places.html',
           controller: 'Places as vm'

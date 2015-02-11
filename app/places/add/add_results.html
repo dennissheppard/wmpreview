@@ -1,5 +1,7 @@
 <div id="placesForm">
   <div ng-repeat="result in vm.yelpResults">
-
+    {{result.name}}
+    {{result.rating}}
+    {{result.location.address[0]}} {{result.location.city}}
   </div>
 </div>
