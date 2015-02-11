@@ -54,7 +54,8 @@ function InjectDependecies(){
     .pipe(wiredep({
       directory: './bower_components/',
       bowerJson: require('./bower.json'),
-      ignorePath: '../..' // bower files will be relative to the root
+      ignorePath: '../..', // bower files will be relative to the root
+      exclude: ['bootstrap']
     }))
     .pipe(gulp.dest('./'));
 }

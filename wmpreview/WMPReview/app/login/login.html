@@ -1,16 +1,24 @@
-<div class="container">
-  <form name="loginForm" ng-submit="vm.submitLogin()">
-    <div class="form-group">
-      <input id="username" placeholder="Username" ng-required="true" ng-model="vm.username" class="form-control" required />
-    </div>
-    <div class="form-group">
-      <input type="password" id="password" placeholder="Password" ng-required="true" ng-model="vm.password" class="form-control" required/>
-    </div>
-    <div class="form-group">
-      <input type="submit" value="Login" class="btn btn-block btn-primary" />
-    </div>
-  </form>
-  <input type="button" class="btn btn-block btn-default" ui-sref="search" value="Search for a place"/>
-  <input type="button" class="btn btn-block btn-default" ui-sref="places.add" value="Check out places"/>
-
+<div class="scrollable">
+  <div class="scrollable-content section">
+    <form action="" id="" ng-submit="vm.submitLogin()">
+      <div bs-panel title="">
+        <fieldset>
+          <legend>Login</legend>
+          <div class="form-group">
+            <label>Email</label>
+            <input bs-form-control type="text" ng-model="user.username" label="Email" label-class="col-xs-3 col-sm-2 col-lg-1" class="form-control" placeholder="Username" ng-required="true" />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input bs-form-control type="password" ng-model="user.password" label="Password" label-class="col-xs-3 col-sm-2 col-lg-1" class="form-control" placeholder="Password" ng-required="true" />
+          </div>
+        </fieldset>
+        <hr>
+        <button type="submit" id="btnSignIn" class="btn btn-primary btn-block" data-style="expand-right">
+        Sign In
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
+

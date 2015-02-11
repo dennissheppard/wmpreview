@@ -24,7 +24,7 @@
 
       // fire an event up the chain to hide the navbar
       // this should get caught in the shell controller
-      $scope.$emit('hideNav');
+      // $scope.$emit('hideNav');
     }
 
     function SubmitLogin(){
