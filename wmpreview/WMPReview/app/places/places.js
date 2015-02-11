@@ -3,39 +3,32 @@
   angular.module('foodApp.places')
   .controller('Places', Places);
 
-  Places.$inject = ['PlacesService', '$state']
+  Places.$inject = ['$state', 'PlacesManager']
 
-  function Places(PlacesService, $state){
+  function Places($state, PlacesManager){
     /*jshint validthis: true */
     var vm = this;
     vm.search = search;
     
     activate();
-    vm.businesses = businesses;
-    //DOM events
-    
 
     ///////
 
       
     vm.businesses = '';
+
     function activate(){
-       /*
-        * any startup code goes here
-        */
-        
+
     }
       
     function search(){
-       searchToAddPlace(vm.searchTerm);
+        PlacesManager.getYelpEntries(vm.searchTerm).then(function(response){
+            $state.go('places.add');
+        });
     }
       
 
-    function searchToAddPlace(term){
-        vm.businesses = PlacesService.getYelpEntries(term);
-        
 
-    }
 
   }
 

@@ -1,13 +1,5 @@
 <div id="placesForm">
-  <form name="addPlaceForm" ng-submit="vm.submitPlace()">
-    <input id="placename" placeholder="name" ng-required="true" ng-model="vm.placeName" required />
-    <input id="placeAddress" placeholder="address" ng-model="vm.placeAddress" />
-    <input id="placePhone" placeholder="phone number" ng-model="vm.placePhone" />
-    <input id="placeLink" placeholder="link" ng-model="vm.placeLink" />
-    <input id="placeHours" placeholder="hours" ng-model="vm.placeHours" />
-    <input id="placeTags" placeholder="tags" ng-model="vm.placeTags" />
+  <div ng-repeat="result in vm.yelpResults">
 
-    <input type="submit" value="Add Place" />
-
-  </form>
+  </div>
 </div>
