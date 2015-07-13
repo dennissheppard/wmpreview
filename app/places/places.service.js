@@ -37,29 +37,38 @@
     function getYelpEntries(term){
 
         var method = 'GET';
-        var url = 'http://api.yelp.com/v2/search';
+        var url = 'http://api.yelp.com/v2/search?callback=JSON_CALLBACK';
         var params = {
-                callback: 'angular.callbacks._0',
+                callback: 'JSON_CALLBACK',
                 location: 'Chicago',
                 oauth_consumer_key: 'YzvVFNtk6g0SrGKWYvJHlA', //Consumer Key
-                oauth_token: 'EaNja7z-5TLzYhyBCbOBE7hg9OCSBuTC', //Token
+                oauth_token: 'HOXHS1WtDABQcLpGjVc0rfX1EcAsam0M', //Token
                 oauth_signature_method: "HMAC-SHA1",
-                Authorization: "Token: EaNja7z-5TLzYhyBCbOBE7hg9OCSBuTC",
+                //Authorization: "Token: Z9UcGd9vGjLxozt0hxDmZA3OW_50EH4N",
                 oauth_timestamp: new Date().getTime(),
                 oauth_nonce: randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-                term: name
+                term: term
             };
+            
+            
+        
         var consumerSecret = 'FW9dld_EbBgaI5VL0FnymJWXcIc'; //Consumer Secret
-        var tokenSecret = 'EFYMtqmu6u6gVix00DSsb3cIffo'; //Token Secret
+        var tokenSecret = 'U9oAjOSQfVgFE-iWc76tOt8wedg'; //Token Secret
         var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
         params['oauth_signature'] = signature;
-        return $http.jsonp(url, {params: params}).then(function(results){
+        return $http.jsonp(url, {params: params}).success(function(data, status, headers, config){
+            return data;
+        }).error(function(data, status, headers, config){
+            return status;
+        });
+        //return $.get(url, {params: params}, callback);
+        /*then(function(results){
             PlacesModel.place(results.data.businesses);
             return results.data;
-        });
-    
-
-
+        },function(error){
+          console.log(error);
+          return error;
+          });*/
     }
 
     function randomString(length, chars) {

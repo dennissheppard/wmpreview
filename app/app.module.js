@@ -21,7 +21,7 @@
     'foodApp.places',
     'foodApp.userAccount',
     'foodApp.places',
-    'foodApp.search'
+    'foodApp.search' 
   ])
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
       $stateProvider
@@ -71,7 +71,7 @@
           controller: 'Review as vm'
         }).state('places.details', {
           // url will become '/places/12/details'
-          url: '/:placeId/details',
+          url: '/:placeId/details/',
           templateUrl: 'app/places/details/places.details.html',
           controller: 'Details as vm'
         })

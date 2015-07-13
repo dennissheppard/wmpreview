@@ -1,13 +1,15 @@
-<div id="filters" ng-controller="Filters as vm">
+<div id="filters" class="col-md-4 col-xs-12 filters" ng-controller="Filters as vm">
     <form class="form" role="form" name="filterForm" ng-submit="vm.submitFilter()">
+        <div class="row">
         <div class="form-group">
-            <select class= "form-control" ng-model="vm.distanceFromUser">
+            <select class= "form-control col-xs-12 col-md-8" ng-model="vm.distanceFromUser">
                 <option value="" selected disabled>Distance</option>
                 <option value=".25">0.25 mile</option>
                 <option value="1">1 mile</option>
                 <option value="5">5 miles</option>
                 <option value="20">20 miles</option>
             </select>
+        </div>
         </div>
         <div class="checkbox">
             <label><input type="checkbox" ng-model="vm.greatForClients"/>Great for Clients</label>
@@ -28,6 +30,6 @@
         <div class="checkbox">
             <label><input type="checkbox" ng-model="vm.grabAndGo"/> Grab and Go</label>
         </div>
-        <button type="submit" ng-click="vm.submitFilter()" class="btn btn-default">Search with Filters</button>
+        <button type="submit" ng-click="vm.submitFilter()" class="btn btn-default">Filter Results</button>
     </form>
 </div>

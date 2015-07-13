@@ -20,7 +20,12 @@
     ////////////////
 
     function activate() {
-      vm.searchTerm = '';
+      if(SearchManager.resultData){
+        vm.searchResults = SearchManager.resultData.businesses;
+      }
+      else{
+        vm.searchTerm = '';
+      }
       // send coordinates
       //SearchManager.getNearbyPlaces().then(function(response){
       //  vm.nearbyPlaces = response.data.places;
@@ -28,12 +33,17 @@
     }
 
     function search(){
-      SearchManager.getPlacesBySearchTerm(vm.searchTerm).then(function(results){
-          vm.searchResults = results.data;
-      }, function (error){
+      SearchManager.getPlacesBySearchTerm(vm.searchTerm).success(function(results){
+          angular.forEach(results.businesses, function (result, key)
+          {
+            result.id = encodeURI(result.id);
+          });
+          vm.searchResults = results.businesses;
+      }).error(function (error){
           vm.error = error;
       });
     }
+   
 
     function filter(){
         if(vm.showFilterSection){

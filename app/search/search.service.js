@@ -3,17 +3,20 @@
     .module('foodApp.search')
     .factory('SearchManager', SearchManager);
 
-  SearchManager.$inject = ['ServiceManager'];
+  SearchManager.$inject = ['ServiceManager', 'PlacesManager'];
 
   /* @ngInject */
-  function SearchManager(ServiceManager) {
-    var that = this;
-    return {
+  function SearchManager(ServiceManager, PlacesManager) {
+    var search = {
       getNearbyPlaces: GetNearbyPlaces,
       getPlacesBySearchTerm: GetPlacesBySearchTerm,
-      getSearchResultsFiltered: GetSearchResultsFiltered
+      getSearchResultsFiltered: GetSearchResultsFiltered, 
+      
     };
+    return search;
 
+
+    
     ////////////////
     function GetNearbyPlaces(){
       navigator.geolocation.getCurrentPosition(geoLocationSuccess);
@@ -22,13 +25,12 @@
     }
 
     function GetPlacesBySearchTerm(term) {
-        var url = 'Business';
-        return ServiceManager.Get(url).then(function (results) {
-            return results;
-        }, function(error){
+        return PlacesManager.getYelpEntries(term).success(function(data){
+            search.resultData = data;
+            return search.resultData;
+        }).error(function(error){
             return error;
         });
-
     }
 
 

@@ -4,13 +4,19 @@
   <img src="content/images/wmp_icon.png">
 </div> -->
 
-  <form>
+  <form ng-submit="vm.search()">
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search" ng-model="vm.searchTerm" ng-enter="vm.search()" ng-submit="vm.search()"/>
+      <div class="row">
+        <input type="text" class="form-control col-xs-12 col-md-6" placeholder="Search" ng-model="vm.searchTerm" ng-enter="vm.search()"/>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-default col-xs-12 col-md-3 search-Btn" ng-click="vm.search()">Search</button>
+      </div>
     </div>
   </form>
-
+  
   <div class="list-group">
+    
     <a class="list-group-item" ng-repeat="place in vm.nearbyPlaces">
       <span class="pull-right">{{place.distance}}</span>
       <h4 class="list-group-item-heading">{{place.name}}</h4>
@@ -18,21 +24,29 @@
     </a>
   </div>
 
-  <div class="row">
-      <div class="col-xs-12">
-          <button type="button" class="btn btn-default col-xs-12" ng-click="vm.filter()">Filter</button>
-      </div>
-  </div>
+  
 
-  <div ng-if="vm.searchResults">
-      <ul class="list-group">
+  <div ng-if="vm.searchResults" class="search-Results">
+    <div class="row">
+      <h3 class="col-md-2">Results</h3>    
+      <button type="button" class="btn btn-default col-xs-12 col-md-1 col-md-offset-9" ng-click="vm.filter()">Filter</button>  
+           
+    </div>
+    <ng-include ng-if="vm.showFilterSection" src="'app/search/filters/search.filters.html'"></ng-include> 
+      <ul class="list-group col-md-12 col-xs-12" style="padding: 0 0;">
           <li class="list-group-item" ng-repeat="result in vm.searchResults">
-            {{::result.Name}}
-            {{::result.Tags[0].Name}}
+            <div class="row">
+              <span class="col-xs-8 col-md-5"><a ui-sref="places.details({placeId: {{::result.id}}})">{{::result.name}}</a></span>
+              <span class="col-xs-offset-2 col-xs-2 col-md-offset-3 col-md-1">{{::result.rating}}</span>
+              <span class="hidden-xs hidden-sm hidden-md col-md-offset-1">{{::result.location.neighborhoods[0]}}</span>
+            </div>
+            <div class="row">
+              <span class="hidden-lg col-xs-6 ">Location: {{::result.location.neighborhoods[0]}}</span>
+            </div>
           </li>
       </ul>
   </div>
-  <ng-include ng-if="vm.showFilterSection" src="'app/search/filters/search.filters.html'"></ng-include>
+ 
 
   <!--<ui-view ng-controller="FilterResults"></ui-view>-->
 
