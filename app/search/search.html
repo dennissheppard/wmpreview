@@ -36,7 +36,7 @@
       <ul class="list-group col-md-12 col-xs-12" style="padding: 0 0;">
           <li class="list-group-item" ng-repeat="result in vm.searchResults">
             <div class="row">
-              <span class="col-xs-8 col-md-5"><a ui-sref="places.details({placeId: {{::result.id}}})">{{::result.name}}</a></span>
+              <span class="col-xs-8 col-md-5"><a ui-sref="places.details({placeId: '{{result.id}}'})">{{::result.name}}</a></span>
               <span class="col-xs-offset-2 col-xs-2 col-md-offset-3 col-md-1">{{::result.rating}}</span>
               <span class="hidden-xs hidden-sm hidden-md col-md-offset-1">{{::result.location.neighborhoods[0]}}</span>
             </div>

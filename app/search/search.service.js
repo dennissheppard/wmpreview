@@ -1,12 +1,12 @@
 (function () {
   angular
     .module('foodApp.search')
-    .factory('SearchManager', SearchManager);
+    .factory('SearchService', SearchService);
 
-  SearchManager.$inject = ['ServiceManager', 'PlacesManager'];
+  SearchService.$inject = ['ServiceManager', 'PlacesService'];
 
   /* @ngInject */
-  function SearchManager(ServiceManager, PlacesManager) {
+  function SearchService(ServiceManager, PlacesService) {
     var search = {
       getNearbyPlaces: GetNearbyPlaces,
       getPlacesBySearchTerm: GetPlacesBySearchTerm,
@@ -25,7 +25,7 @@
     }
 
     function GetPlacesBySearchTerm(term) {
-        return PlacesManager.getYelpEntries(term).success(function(data){
+        return PlacesService.getYelpData(term, true).success(function(data){
             search.resultData = data;
             return search.resultData;
         }).error(function(error){

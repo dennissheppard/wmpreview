@@ -1,12 +1,12 @@
 (function(){
   angular.module('foodApp.places')
-    .factory('PlacesManager', PlacesManager);
+    .factory('PlacesService', PlacesService);
 
-    PlacesManager.$inject = ['$http', 'apiConstants', 'PlacesModel'];
+    PlacesService.$inject = ['$http', 'apiConstants', 'PlacesModel'];
 
-  function PlacesManager($http, apiConstants, PlacesModel){
+  function PlacesService($http, apiConstants, PlacesModel){
     var places = {
-        getYelpEntries: getYelpEntries,
+        getYelpData: getYelpData,
         GetYelpResults: getYelpResults
     };
 
@@ -34,22 +34,27 @@
       );
     }
       
-    function getYelpEntries(term){
+    function getYelpData(query, isSearch){
 
         var method = 'GET';
-        var url = 'http://api.yelp.com/v2/search?callback=JSON_CALLBACK';
+        var searchUrl = 'http://api.yelp.com/v2/search';
+        var businessUrl = 'http://api.yelp.com/v2/business/'+query;
+        var url = (isSearch ? searchUrl : businessUrl) + '?callback=JSON_CALLBACK';
         var params = {
                 callback: 'JSON_CALLBACK',
-                location: 'Chicago',
+                
                 oauth_consumer_key: 'YzvVFNtk6g0SrGKWYvJHlA', //Consumer Key
                 oauth_token: 'HOXHS1WtDABQcLpGjVc0rfX1EcAsam0M', //Token
                 oauth_signature_method: "HMAC-SHA1",
                 //Authorization: "Token: Z9UcGd9vGjLxozt0hxDmZA3OW_50EH4N",
                 oauth_timestamp: new Date().getTime(),
                 oauth_nonce: randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-                term: term
+                
             };
-            
+        if(isSearch){
+            params.location = 'Chicago';
+            params.term = query;
+        }
             
         
         var consumerSecret = 'FW9dld_EbBgaI5VL0FnymJWXcIc'; //Consumer Secret
@@ -61,14 +66,7 @@
         }).error(function(data, status, headers, config){
             return status;
         });
-        //return $.get(url, {params: params}, callback);
-        /*then(function(results){
-            PlacesModel.place(results.data.businesses);
-            return results.data;
-        },function(error){
-          console.log(error);
-          return error;
-          });*/
+       
     }
 
     function randomString(length, chars) {

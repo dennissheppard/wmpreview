@@ -3,10 +3,10 @@
         .module('foodApp.search')
         .controller('Filters', Filters);
 
-    Filters.$inject = ['$state','SearchManager'];
+    Filters.$inject = ['$state','SearchService'];
 
     /* @ngInject */
-    function Filters($state, SearchManager) {
+    function Filters($state, SearchService) {
             /* jshint validthis: true */
         var vm = this;
 
@@ -32,7 +32,7 @@
                 greatService: vm.greatService,
                 grabAndGo: vm.grabAndGo
             };
-            SearchManager.getSearchResultsFiltered(filters).then(function(response){
+            SearchService.getSearchResultsFiltered(filters).then(function(response){
                 vm.filteredPlaces = response.data.places;
                 $state.go('search.filter-results');
             });

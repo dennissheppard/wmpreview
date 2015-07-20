@@ -71,7 +71,8 @@
           controller: 'Review as vm'
         }).state('places.details', {
           // url will become '/places/12/details'
-          url: '/:placeId/details/',
+          
+          url: '/:placeId/details',
           templateUrl: 'app/places/details/places.details.html',
           controller: 'Details as vm'
         })

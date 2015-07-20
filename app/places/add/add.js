@@ -2,7 +2,7 @@
     angular.module('foodApp.places.add')
         .controller('Add', Add);
 
-    Add.$inject = ['PlacesManager'];
+    Add.$inject = ['PlacesService'];
 
     function Add(PlacesManager){
 

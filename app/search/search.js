@@ -3,10 +3,10 @@
     .module('foodApp.search')
     .controller('Search', Search);
 
-  Search.$inject = ['$state', 'SearchManager'];
+  Search.$inject = ['$state', 'SearchService'];
 
   /* @ngInject */
-  function Search($state, SearchManager) {
+  function Search($state, SearchService) {
     /* jshint validthis: true */
     var vm = this;
 
@@ -20,20 +20,20 @@
     ////////////////
 
     function activate() {
-      if(SearchManager.resultData){
-        vm.searchResults = SearchManager.resultData.businesses;
+      if(SearchService.resultData){
+        vm.searchResults = SearchService.resultData.businesses;
       }
       else{
         vm.searchTerm = '';
       }
       // send coordinates
-      //SearchManager.getNearbyPlaces().then(function(response){
+      //SearchService.getNearbyPlaces().then(function(response){
       //  vm.nearbyPlaces = response.data.places;
       //});
     }
 
     function search(){
-      SearchManager.getPlacesBySearchTerm(vm.searchTerm).success(function(results){
+      SearchService.getPlacesBySearchTerm(vm.searchTerm).success(function(results){
           angular.forEach(results.businesses, function (result, key)
           {
             result.id = encodeURI(result.id);

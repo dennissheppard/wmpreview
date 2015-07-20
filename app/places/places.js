@@ -3,9 +3,9 @@
   angular.module('foodApp.places')
   .controller('Places', Places);
 
-  Places.$inject = ['$state', 'PlacesManager']
+  Places.$inject = ['$state', 'PlacesService']
 
-  function Places($state, PlacesManager){
+  function Places($state, PlacesService){
     /*jshint validthis: true */
     var vm = this;
     vm.search = search;
@@ -22,7 +22,7 @@
     }
       
     function search(){
-        PlacesManager.getYelpEntries(vm.searchTerm).then(function(response){
+        PlaceService.getYelpData(vm.searchTerm, true).then(function(response){
             $state.go('places.add');
         });
     }
